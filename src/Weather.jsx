@@ -1,21 +1,24 @@
 import React from 'react'
+import './weather.css'
 
 const Weather = ({data}) => {
   return (
-    <div>
-        <h1>
-            City :{data.name}
-        </h1>
-        <h1>
-            Temperature : {data.main.temp}
-        </h1>
-        <h1>
-        Humidity : {data.main.humidity}
-        </h1>
-        <h1>
-            Weather : {data.weather[0].main}
-        </h1>
+   <>
+    <h4>{data.name.toUpperCase()}</h4>
+    <h6>{data.weather[0].main.toUpperCase()}</h6>
+    
+    <h1 className='temp'>{data.main.temp}<sup>&deg;</sup></h1>
+    <div className="container">
+        <div className="details">
+            <p>MAX</p>
+            <span className='avg'>{data.main.temp_max}<sup>&deg;</sup></span>
+        </div>
+        <div className="details">
+            <p>MIN</p>
+            <span>{data.main.temp_min}<sup>&deg;</sup></span>
+        </div>
     </div>
+   </>
   )
 }
 
