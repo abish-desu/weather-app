@@ -4,7 +4,7 @@ import Weather from "./Weather";
 import "./App.css";
 
 const App = () => {
-  var [date, setDate] = useState(new Date());
+  let [date, setDate] = useState(new Date());
   // store latitude and longitude
   const [data, setData] = useState([]);
 
